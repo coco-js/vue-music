@@ -1,0 +1,144 @@
+$red: #d33a31;
+.container {
+	padding-top:40px;
+	.tab {
+		position:fixed;
+		top:64px;
+		left:0;
+		right:0;
+		z-index:100;
+
+		display:flex;
+		height:40px;
+		background:#fff;
+		text-align:center;
+		border-bottom:1px solid #f3f3f3;
+		li {
+			width:33.33%;
+			height:100%;
+			flex:1;
+			list-style:none;
+			span{
+				position:relative;
+				display:inline-block;
+				line-height:40px;
+				height:100%;
+				padding:0px 10px;
+			}
+		}
+		.selected {
+			span {
+				color:$red;
+				&::after {
+					content: '';
+					position:absolute;
+					bottom:-1px;
+					left:0;
+					width:100%;
+					height:2px;
+					background:$red;
+				}
+			}
+		}
+	}
+	.content {
+		.item {
+			padding-top:20px;
+			h2 {
+				position:relative;
+				padding-left:10px;
+				margin-bottom:15px;
+				height:20px;
+				line-height:20px;
+				font-size:16px;
+				&::after {
+					content: "";
+					position: absolute;
+					left: 0;
+					top: calc(50% - 8px);
+					height:16px;
+					width:2px;
+					background:$red;
+				}
+			}
+			.list {
+				.panel {
+					display:inline-block;
+					width:33.33%;
+					padding:0 2px 10px 0;
+					a{
+						color:#333;
+					}
+					.img {
+						position:relative;
+						&::after {
+							content: '';
+							position:absolute;
+							top:0;
+							width:100%;
+							height:20px;
+							background:rgba(0,0,0,0.2);
+						}
+						.playcount {
+							position:absolute;
+							top:0px;
+							right:5px;
+							font-size:12px;
+							color:#fff;
+							z-index:10;
+						}
+						img {
+							width:100%;
+						}
+					}
+					.text {
+						display:-webkit-box;
+						height:37px;
+						padding:6px 2px 0 6px;
+						font-size:13px;
+						-webkit-line-clamp:2;
+						-webkit-box-orient: vertical;
+						overflow:hidden;
+						line-height:1.2;
+					}
+				}
+			}
+			.list2 {
+				a {
+					position:relative;
+					display:block;
+					padding:6px 0px 6px 10px;
+					color:#333;
+					font-size:16px;
+					border-bottom:1px solid #f3f3f3;
+					.des {
+						color:#888;
+					}
+					.play {
+						position:absolute;
+						top: calc(50% - 11px);
+						right:10px;
+
+						display:inline-block;
+						width:22px;
+						height:22px;
+					}
+					.artists {
+						span {
+							font-size:12px;
+							color:#888;
+							&::after {
+								content: ' / ';
+							}
+						}
+						span:last-child,span:nth-last-child(2) {
+							&::after {
+								content: '';
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
